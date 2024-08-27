@@ -1,0 +1,26 @@
+<?php
+$hasil = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $angka1 = isset($_POST['angka1']) ? (int)$_POST['angka1'] : 0;
+    $angka2 = isset($_POST['angka2']) ? (int)$_POST['angka2'] : 0;
+    $hasil = $angka1 + $angka2;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumlahkan Angka</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="number" name="angka1" placeholder="angka 1" required>
+        <input type="number" name="angka2" placeholder="angka 2" required>
+        <button type="submit">Jumlahkan</button>
+    </form>
+
+    <h2>Hasil: <?php echo $hasil; ?></h2>
+</body>
+</html>
